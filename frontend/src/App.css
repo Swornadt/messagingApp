@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #151515;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto; 
+  z-index: 0;
+}
