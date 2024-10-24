@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { setAuthUser } from '../redux/userSlice';
-import { USER_API_ENDPOINT } from '../../utils/constant';
+import { USER_API_ENDPOINT } from '../utils/constant';
 
 const Signin = () => {
     const [user, setUser] = useState({

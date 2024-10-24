@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "../redux/userSlice";
-import { USER_API_ENDPOINT } from "../../utils/constant";
+import { USER_API_ENDPOINT } from "../utils/constant";
 
 const Sidebar = ({ showMessageContainer }) => {
   const [search, setSearch] = useState("");
