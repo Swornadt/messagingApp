@@ -10,7 +10,7 @@ const useSocket = (userId) => {
 
     useEffect(() => {
         if (userId) {
-            socketRef.current = io("http://localhost:8080", {
+            socketRef.current = io("https://messagingapp-tibe.onrender.com" || "http://localhost:8080", {
                 query: { userId },
             });
 

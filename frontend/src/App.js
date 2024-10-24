@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import io from "socket.io-client";
 import { setSocket } from './redux/socketSlice';
 import { setOnlineUsers } from './redux/userSlice';
+import { BASE_API_ENDPOINT } from './utils/constant';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ function App() {
   
   useEffect(()=>{
     if(authUser) {
-      const socket = io("http://localhost:8080",{
+      const socket = io("https://messagingapp-tibe.onrender.com" || "http://localhost:8080",{
         query:{
           userId:authUser._id,
         }
