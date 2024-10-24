@@ -4,6 +4,7 @@ import messenger_logo from "../messenger_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { USER_API_ENDPOINT } from "../../utils/constant";
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -22,7 +23,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/v1/user/register`,
+        `${USER_API_ENDPOINT}/register`,
         user,
         {
           headers: {

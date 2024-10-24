@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "../redux/userSlice";
+import { USER_API_ENDPOINT } from "../../utils/constant";
 
 const Sidebar = ({ showMessageContainer }) => {
   const [search, setSearch] = useState("");
@@ -21,7 +22,7 @@ const Sidebar = ({ showMessageContainer }) => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/v1/user/logout`);
+      const res = await axios.get(`${USER_API_ENDPOINT}/logout`);
       dispatch(setAuthUser(null));
       console.log(res);
       navigate("/login");
