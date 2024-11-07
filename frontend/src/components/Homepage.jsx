@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Homepage = () => {
     // State to track the currently visible component (sidebar, message, or profile) for small screens
-    const [activeComponent, setActiveComponent] = useState('message');
+    const [activeComponent, setActiveComponent] = useState('sidebar');
     const [selectedUser, setSelectedUser] = useState(false);
     const [isProfileVisible, setIsProfileVisible] = useState(false);
     const { authUser } = useSelector(store=>store.user);
