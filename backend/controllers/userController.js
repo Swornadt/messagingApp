@@ -62,7 +62,7 @@ export const login = async ( req, res) => {
             });
         };
         const user = await User.findOne({email});
-        if (!email) {
+        if (!user) {
             return res.status(400).json({
                 message:"Incorrect username or password",
                 success:false
