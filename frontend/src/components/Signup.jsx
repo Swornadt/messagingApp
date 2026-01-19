@@ -21,7 +21,6 @@ const Signup = () => {
   };
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(user);
     try {
       const res = await axios.post(
         `${USER_API_ENDPOINT}/register`,

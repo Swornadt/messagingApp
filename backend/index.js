@@ -18,6 +18,7 @@ const __dirname = path.resolve();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
+
 const corsOption = {
     origin: [
         'http://localhost:3000',
@@ -26,11 +27,15 @@ const corsOption = {
     credentials: true
 };
 app.use(cors(corsOption));
+
 //routes:
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
+//app.use("/api/v1/notifications",notificationRoute);
 //http://localhost:8080/api/v1/user/register
 
+
+//Server static assets:
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get("*", (_,res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
